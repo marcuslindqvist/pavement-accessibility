@@ -1,0 +1,35 @@
+[class*="card"] {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(221, 221, 221);
+    padding: 1rem;
+    transition: height 200ms ease-out;
+}
+
+.card-md {
+    min-height: 200px;
+    transition: height 200ms ease-out;
+}
+
+.card-md p {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 500ms ease-in-out,
+        opacity 200ms ease-in-out;
+}
+
+.card-sm {
+    transition: height 200ms ease-out;
+}
+
+.card-sm p {
+    height: 60px;
+    visibility: collapse;
+    opacity: 0;
+    transition: visibility 500ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.checklist-item {
+    background-color: antiquewhite;
+    margin-bottom: 2rem;
+    transition: height 200ms ease-out;
+}

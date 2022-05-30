@@ -1,0 +1,42 @@
+.login-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+    color: antiquewhite;
+}
+
+.login-page-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.login-page-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: antiquewhite;
+}
+
+a:visited {
+    color: antiquewhite;
+}
