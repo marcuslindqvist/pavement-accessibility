@@ -26,8 +26,9 @@ app.use(express.static(buildFolder));
 //ROUTES
 app.use('/guidelines', guidelines);
 app.use('/login', (req, res) => {
+    console.log(req);
     res.send({
-        token: 'test123',
+        token: 'pAvEmEnT',
     });
 });
 app.get('*', (req, res) => {

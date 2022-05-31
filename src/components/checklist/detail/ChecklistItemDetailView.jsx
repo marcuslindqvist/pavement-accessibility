@@ -19,9 +19,10 @@ const ChecklistItemDetailView = ({ activeGuideline }) => {
     }, []);
 
     return (
-        <div>
-            <h2>{activeGuideline.name}</h2>
+        <div className="card-detail-view">
+            <h3>{activeGuideline.name}</h3>
             <p>{activeGuideline.description}</p>
+            <a href={activeGuideline.URL}>Mer om denna riktlinje</a>
             <div>
                 <h3>Principer:</h3>
                 {principlesList.map((principle, index) => (

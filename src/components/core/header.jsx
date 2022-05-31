@@ -7,9 +7,13 @@ import { useState } from 'react';
 const Header = () => {
     function changeIsMenuOpen() {
         setIsMenuOpen(!isMenuOpen);
+        if (isMenuOpen === true) {
+            setActiveClass('');
+        } else setActiveClass('active');
     }
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeClass, setActiveClass] = useState('');
 
     return (
         <div>
@@ -22,7 +26,12 @@ const Header = () => {
                 <Link to="/">
                     <h1>Pavement</h1>
                 </Link>
-                <button onClick={changeIsMenuOpen}>Menu</button>
+                <button
+                    className={`burger ${activeClass}`}
+                    onClick={() => {
+                        changeIsMenuOpen();
+                    }}
+                ></button>
             </header>
         </div>
     );

@@ -1,12 +1,14 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Login from './components/login/Login';
 import Header from './components/core/header';
 import Checklist from './routes/Checklist';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import useToken from './components/app/useToken';
+import Dashboard from './components/dashboard/Dashboard';
 
 export default function App() {
-    const [token, setToken] = useState(false);
+    const { token, setToken } = useToken();
 
     if (!token) {
         return <Login setToken={setToken} />;
@@ -17,8 +19,8 @@ export default function App() {
             <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path="/" element={<App />}></Route>
-                    <Route path="checklist" element={<Checklist />} />
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/checklist" element={<Checklist />} />
                 </Routes>
             </BrowserRouter>
         </div>

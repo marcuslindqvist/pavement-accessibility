@@ -7,10 +7,12 @@ body {
     height: 100%;
     font-size: 18px;
     padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
     font-size: 3.052rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h2 {
@@ -31,4 +33,16 @@ h5 {
 
 h6 {
     font-size: 1rem;
+}
+
+button {
+    padding: 1rem;
+}
+
+[class*="card"] {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(221, 221, 221);
+    padding: 1rem;
+    transition: height 200ms ease-out;
+    cursor: pointer;
 }

@@ -1,7 +1,5 @@
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Header from './components/core/header';
-import Checklist from './routes/Checklist';
 import React from 'react';
 
 import './index.css';

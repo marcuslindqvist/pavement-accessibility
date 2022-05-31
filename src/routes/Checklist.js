@@ -48,9 +48,6 @@ export default function Checklist() {
                 <button onClick={changeCardSize} data-name="card-md">
                     big
                 </button>
-                <button onClick={changeCardSize} data-name="card-lg">
-                    detail
-                </button>
             </div>
             {listStyle === 'row' ? (
                 <div>
