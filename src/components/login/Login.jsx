@@ -1,19 +1,25 @@
-const Login = () => {
-    
+import React, { useState } from 'react';
 
+const Login = () => {
     return (
-        <div>
-            {isMenuOpen ? (
-                <Menu closeThisPage={changeIsMenuOpen} />
-            ) : (
-                <div></div>
-            )}
-            <header>
-                <Link to="/">
-                    <h1>Pavement</h1>
-                </Link>
-                <button onClick={changeIsMenuOpen}>Menu</button>
-            </header>
+        <div className="form">
+            <form>
+                <label>
+                    Användarnamn
+                    <input type="text" name="uname" required />
+                </label>
+
+                <label>
+                    Lösenord
+                    <input type="password" name="pass" required />
+                </label>
+                <label>
+                    kom ihåg mig
+                    <input type="checkbox" />
+                </label>
+
+                <button type="submit">Skicka</button>
+            </form>
         </div>
     );
 };

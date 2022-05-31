@@ -25,6 +25,11 @@ app.use(express.static(buildFolder));
 
 //ROUTES
 app.use('/guidelines', guidelines);
+app.use('/login', (req, res) => {
+    res.send({
+        token: 'test123',
+    });
+});
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
