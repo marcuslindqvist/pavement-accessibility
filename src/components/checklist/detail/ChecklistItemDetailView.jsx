@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './ChecklistItemDetailView.css';
+import TagPill from './TagPill';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const ChecklistItemDetailView = ({ activeGuideline }) => {
     const [principlesList, SetPrinciplesList] = useState([]);
     const [tagsList, setTagsList] = useState([]);
@@ -14,27 +18,40 @@ const ChecklistItemDetailView = ({ activeGuideline }) => {
             const tags = activeGuideline.tags.split(',');
             setTagsList(tags);
         }
+
         createPrincipleArray();
         createTagsArray();
-    }, []);
-
+        createDescription();
+    }, [activeGuideline]);
+    const createDescription = () => {
+        let descriptionElement = document
+            .createRange()
+            .createContextualFragment(activeGuideline.description);
+        return descriptionElement;
+    };
     return (
         <div className="card-detail-view">
-            <h3>{activeGuideline.name}</h3>
-            <p>{activeGuideline.description}</p>
-            <a href={activeGuideline.URL}>Mer om denna riktlinje</a>
-            <div>
+            <section>
+                <h3>{activeGuideline.name}</h3>
+            </section>
+            <section id="description">{activeGuideline.description}</section>
+            <a href={activeGuideline.URL}>
+                Mer om denna riktlinje
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </a>
+
+            <section>
                 <h3>Principer:</h3>
                 {principlesList.map((principle, index) => (
-                    <span key={index}>{principle}</span>
+                    <TagPill key={index} tag={principle} />
                 ))}
-            </div>
-            <div>
+            </section>
+            <section>
                 <h3>Taggar:</h3>
                 {tagsList.map((tag, index) => (
-                    <span key={index}>{tag}</span>
+                    <TagPill key={index} tag={tag} />
                 ))}
-            </div>
+            </section>
         </div>
     );
 };

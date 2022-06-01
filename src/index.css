@@ -1,3 +1,5 @@
+@import url(./stylevars.css);
+
 * {
     padding: 0;
     margin: 0;
@@ -6,43 +8,84 @@
 body {
     height: 100%;
     font-size: 18px;
-    padding: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--first-color);
 }
 
-h1 {
+h1,
+.h1 {
     font-size: 3.052rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-h2 {
+h2,
+.h2 {
     font-size: 2.441rem;
 }
 
-h3 {
+h3,
+.h3 {
     font-size: 1.953rem;
 }
 
-h4 {
+h4,
+.h4 {
     font-size: 1.563rem;
 }
 
-h5 {
+h5,
+.h5 {
     font-size: 1.25rem;
 }
 
-h6 {
+h6,
+.h6 {
     font-size: 1rem;
 }
 
-button {
-    padding: 1rem;
+button.btn {
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-decoration: none;
+    min-width: 4rem;
 }
+
+button.btn-color {
+    background-color: var(--second-color);
+}
+
+button.btn-color:hover {
+    background-color: var(--third-color);
+}
+
 
 [class*="card"] {
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgb(221, 221, 221);
+    box-shadow: 5px 5px 5px rgb(228, 198, 160);
     padding: 1rem;
     transition: height 200ms ease-out;
     cursor: pointer;
 }
+
+.page-header {
+    padding: 1rem;
+    height: 20%;
+}
+
+.page-main {
+    padding: 1rem;
+}
+
+.space {
+    display: inline-block;
+    width: 1rem;
+}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width: 1200px) {}

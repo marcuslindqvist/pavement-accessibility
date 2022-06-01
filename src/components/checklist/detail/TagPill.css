@@ -1,0 +1,9 @@
+@import url('../../../stylevars.css');
+
+#tag-pill {
+    display: inline-block;
+    border-radius: 0.4rem;
+    background-color: var(--second-color);
+    padding: 0.3rem;
+    margin: 0.3rem 0.3rem;
+}

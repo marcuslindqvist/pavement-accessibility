@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './Login.css';
 
 async function loginUser(loginDetails) {
     return fetch('/login', {
@@ -8,7 +9,7 @@ async function loginUser(loginDetails) {
     }).then((data) => data.json());
 }
 
-const Login = ({ setToken }) => {
+const Login = ({ setToken, setUser }) => {
     const [username] = useState();
     const [password] = useState();
 
@@ -19,21 +20,23 @@ const Login = ({ setToken }) => {
             password,
         });
         setToken(token);
+        setUser(username);
     };
-    return (
-        <div className="form">
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Användarnamn
-                    <input type="text" name="uname" required />
-                </label>
 
-                <label>
-                    Lösenord
+    return (
+        <div className="login-page">
+            <div className="form">
+                <h1>Logga in</h1>
+                <form onSubmit={handleSubmit}>
+                    <label>Användarnamn</label>
+                    <input type="text" name="uname" required />
+                    <label>Lösenord</label>
                     <input type="password" name="pass" required />
-                </label>
-                <button type="submit">Skicka</button>
-            </form>
+                    <button type="submit" className="btn login">
+                        Logga in
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

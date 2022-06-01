@@ -16,24 +16,26 @@ const Header = () => {
     const [activeClass, setActiveClass] = useState('');
 
     return (
-        <div>
+        <header className="page-header">
             {isMenuOpen ? (
                 <Menu closeThisPage={changeIsMenuOpen} />
             ) : (
                 <div></div>
             )}
-            <header>
-                <Link to="/">
-                    <h1>Pavement</h1>
-                </Link>
+            <Link to="/">
+                <span className="h4" id="logo-text">
+                    Pavement
+                </span>
+            </Link>
+            <div>
                 <button
                     className={`burger ${activeClass}`}
                     onClick={() => {
                         changeIsMenuOpen();
                     }}
                 ></button>
-            </header>
-        </div>
+            </div>
+        </header>
     );
 };
 export default Header;

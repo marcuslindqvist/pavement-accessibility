@@ -1,0 +1,16 @@
+.dashboard {
+    width: 100%;
+    min-height: 85%;
+    background: url('../../assets/diverse.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+@media screen and (min-width: 900px) {
+    .dashboard {
+        background-size: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {}

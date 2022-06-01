@@ -1,13 +1,25 @@
+@import url("../../../stylevars.css");
+@import url("../../../index.css");
+
 .card-md {
     transition: height 600ms ease-out;
+    padding: 2rem 1rem;
+
 }
 
 .card-sm {
     transition: height 600ms ease-out;
+    align-items: center;
 }
 
 .checklist-item {
-    background-color: antiquewhite;
-    margin-bottom: 1rem;
+    background-color: white;
     transition: height 200ms ease-out;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.item-number {
+    margin-right: 2rem;
+    font-weight: bold;
 }

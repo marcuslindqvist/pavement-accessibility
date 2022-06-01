@@ -1,3 +1,11 @@
+@import url("../../../stylevars.css");
+@import url("../../../index.css");
+
+
 .card-detail-view {
     background-color: antiquewhite;
+}
+
+section {
+    padding: 1rem 0;
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import './ChecklistItem.css';
-const ChecklistItem = ({ cardType, guidelineItem }) => {
+const ChecklistItem = ({ cardType, guidelineItem, index }) => {
     return (
         <div className={'checklist-item ' + cardType}>
+            <span className="h5 item-number">{index + 1}</span>
             {cardType === 'card-sm' ? (
-                <h4 className="short">{guidelineItem.shortName}</h4>
+                <span className="short h5">{guidelineItem.shortName}</span>
             ) : (
-                <h4 className="long">{guidelineItem.name}</h4>
+                <span className="long h5">{guidelineItem.name}</span>
             )}
         </div>
     );

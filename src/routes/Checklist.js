@@ -2,6 +2,14 @@ import React, { useEffect, useState } from 'react';
 import ChecklistItem from '../components/checklist/item/ChecklistItem';
 import ChecklistItemDetailView from '../components/checklist/detail/ChecklistItemDetailView';
 import './Checklist.css';
+import {
+    faArrowRight,
+    faArrowLeft,
+    faMinimize,
+    faMaximize,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function Checklist() {
     const [guidelines, setGuidelines] = useState([]);
     const [serverStatus, setServerStatus] = useState(true);
@@ -40,48 +48,82 @@ export default function Checklist() {
     }
 
     return (
-        <div>
-            <div>
-                <button onClick={changeCardSize} data-name="card-sm">
-                    small
-                </button>
-                <button onClick={changeCardSize} data-name="card-md">
-                    big
-                </button>
+        <div className="checklist">
+            <div className="page-header">
+                <h1 data-name="card-sm" onClick={changeCardSize}>
+                    Checklista
+                </h1>
             </div>
-            {listStyle === 'row' ? (
-                <div>
-                    <button
-                        onClick={() => changeActiveItem(activeIndex - 1)}
-                        disabled={activeIndex === 0}
-                    >
-                        back
-                    </button>
-                    <button
-                        onClick={() => changeActiveItem(activeIndex + 1)}
-                        disabled={activeIndex === guidelines.length - 1}
-                    >
-                        forward
-                    </button>
-                </div>
-            ) : (
-                <div></div>
-            )}
-            {listStyle === 'col' ? (
-                guidelines.map((guideline, index) => (
-                    <div
-                        key={guideline.id}
-                        onClick={() => changeActiveItem(index)}
-                    >
-                        <ChecklistItem
-                            guidelineItem={guideline}
-                            cardType={cardSize}
+            <div className="checklist-container page-main">
+                {listStyle === 'row' ? (
+                    <div className="arrow-btns">
+                        <button
+                            onClick={() => changeActiveItem(activeIndex - 1)}
+                            disabled={activeIndex === 0}
+                            className="btn"
+                        >
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <span> </span>
+                            Föregående
+                        </button>
+
+                        <button
+                            onClick={() => changeActiveItem(activeIndex + 1)}
+                            disabled={activeIndex === guidelines.length - 1}
+                            className="btn"
+                        >
+                            Nästa
+                            <span> </span>
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                    </div>
+                ) : (
+                    <div>
+                        <button
+                            onClick={changeCardSize}
+                            data-name="card-sm"
+                            className="btn"
+                        >
+                            <FontAwesomeIcon icon={faMinimize} />
+                            <span> </span>
+                            mindre
+                        </button>
+                        <button
+                            onClick={changeCardSize}
+                            data-name="card-md"
+                            className="btn"
+                        >
+                            <FontAwesomeIcon icon={faMaximize} />
+                            <span> </span>
+                            större
+                        </button>
+                    </div>
+                )}
+
+                {listStyle === 'col' ? (
+                    guidelines.map((guideline, index) => (
+                        <div
+                            key={guideline.id}
+                            onClick={() => changeActiveItem(index)}
+                        >
+                            <ChecklistItem
+                                guidelineItem={guideline}
+                                cardType={cardSize}
+                                index={index}
+                            />
+                        </div>
+                    ))
+                ) : (
+                    <div>
+                        <div className="active-index-display h4">
+                            <span>Nr. {activeIndex + 1}</span>
+                        </div>
+                        <ChecklistItemDetailView
+                            activeGuideline={clickedGuideline}
                         />
                     </div>
-                ))
-            ) : (
-                <ChecklistItemDetailView activeGuideline={clickedGuideline} />
-            )}
+                )}
+            </div>
         </div>
     );
 }

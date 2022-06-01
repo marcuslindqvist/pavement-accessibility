@@ -1,0 +1,6 @@
+@import url("./stylevars.css");
+@import url("./index.css");
+
+.app {
+    height: 100vh;
+}

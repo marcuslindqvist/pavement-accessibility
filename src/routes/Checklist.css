@@ -1,0 +1,10 @@
+.arrow-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active-index-display {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
