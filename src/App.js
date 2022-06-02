@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import useToken from './components/app/useToken';
 import Dashboard from './components/dashboard/Dashboard';
 import Accessibility from './routes/Accessibility';
-import ChecklistItemDetailView from './components/checklist/detail/ChecklistItemDetailView';
 
 export default function App() {
     const { token, setToken } = useToken();

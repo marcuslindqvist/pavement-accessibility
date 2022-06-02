@@ -51,7 +51,9 @@ export default function Checklist() {
         <div className="checklist">
             <div className="page-header">
                 <h1 data-name="card-sm" onClick={changeCardSize}>
-                    Checklista
+                    {listStyle === 'col'
+                        ? 'Checklista'
+                        : `Nr ${activeIndex + 1}`}
                 </h1>
             </div>
             <div className="checklist-container page-main">
@@ -115,9 +117,6 @@ export default function Checklist() {
                     ))
                 ) : (
                     <div>
-                        <div className="active-index-display h4">
-                            <span>Nr. {activeIndex + 1}</span>
-                        </div>
                         <ChecklistItemDetailView
                             activeGuideline={clickedGuideline}
                         />

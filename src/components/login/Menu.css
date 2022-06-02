@@ -7,7 +7,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--first-color) url('../../assets/menu-image.png');
+    background: var(--first-color-light) url('../../assets/menu-image.png');
     background-position-y: 120%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -21,20 +21,21 @@
     align-items: center;
 }
 
-ul {
+.menu-page .page-main ul {
     list-style-type: none;
     width: 80%;
 }
 
-li {
+.menu-page .page-main ul li {
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 2rem;
 }
 
-li a {
+.menu-page .page-main ul li a {
     width: 100%;
     font-weight: bold;
+
 }
 
 @media screen and (min-width: 900px) {
@@ -45,27 +46,11 @@ li a {
 
     }
 
-    ul {
+    .menu-page .page-main ul {
         width: 40%;
     }
 
     li {
         margin-bottom: 3rem;
     }
-}
-
-@media screen and (min-width: 1200px) {
-    .menu-page {
-        position: absolute;
-        left: 70%;
-        top: 0;
-        height: 100%;
-        width: 30%;
-        background: var(--first-color) url('../../assets/menu-image.png');
-        background-position-y: 120%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        color: var(--text-color);
-    }
-
 }

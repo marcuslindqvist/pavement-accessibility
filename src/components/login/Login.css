@@ -14,7 +14,7 @@
 }
 
 .form {
-    background: var(--second-color);
+    background: var(--first-color-light);
     padding: 1rem;
     border-top-right-radius: 3rem;
     border-top-left-radius: 3rem;
@@ -55,4 +55,20 @@ button.login {
     font-size: large;
     width: 100%;
     margin: 1rem 0;
+}
+
+@media screen and (min-width: 900px) {
+    .form {
+        height: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .login-page {
+        background-size: 20%;
+    }
+
+    .form {
+        max-width: 40%;
+    }
 }

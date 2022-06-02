@@ -3,9 +3,28 @@
 
 
 .card-detail-view {
-    background-color: antiquewhite;
+    background-color: var(--third-color);
+}
+
+.card-detail-view .page-header {
+    padding: 1rem 0;
+}
+
+.card-detail-view .page-main a {
+    padding: 0.5rem;
+    border: 2px solid var(--third-color);
+}
+
+.card-detail-view .page-main a:hover {
+    padding: 0.5rem;
+    border: 2px solid var(--third-color);
+    background-color: var(--third-color);
 }
 
 section {
     padding: 1rem 0;
+}
+
+input[type=checkbox] {
+    margin: 0 1rem;
 }

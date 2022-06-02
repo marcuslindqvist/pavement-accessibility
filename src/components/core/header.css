@@ -3,7 +3,10 @@
 header.page-header {
     display: flex;
     justify-content: space-between;
-    height: 10%;
+}
+
+.page-header .nav-bar ul {
+    display: none;
 }
 
 a,
@@ -15,6 +18,7 @@ a:visited {
 #logo-text {
     color: #1a1a1a;
     font-weight: bold;
+    margin-right: 6rem;
 }
 
 .burger {
@@ -29,6 +33,7 @@ a:visited {
     background: transparent;
     transition: all 250ms ease-out;
     cursor: pointer;
+
 }
 
 .burger:before,
@@ -40,6 +45,7 @@ a:visited {
     background: #1a1a1a;
     transition: all 250ms ease-out;
     will-change: transform;
+    z-index: 150;
 }
 
 .burger:before {
@@ -68,8 +74,20 @@ a:visited {
 
 @media screen and (min-width: 1200px) {
     header.page-header {
+        justify-content: flex-start;
+    }
+
+    .page-header .nav-bar ul {
         display: flex;
-        justify-content: space-between;
-        height: 10%;
+        gap: 4rem;
+    }
+
+    .page-header .nav-bar ul li {
+        font-weight: bold;
+        list-style-type: none;
+    }
+
+    .burger {
+        display: none;
     }
 }

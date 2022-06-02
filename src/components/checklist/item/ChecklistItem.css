@@ -4,7 +4,6 @@
 .card-md {
     transition: height 600ms ease-out;
     padding: 2rem 1rem;
-
 }
 
 .card-sm {
@@ -13,10 +12,14 @@
 }
 
 .checklist-item {
-    background-color: white;
-    transition: height 200ms ease-out;
+    cursor: pointer;
+    transition: height 200ms ease-out, background-color 300ms ease-in-out;
     display: flex;
     margin-bottom: 2rem;
+}
+
+.checklist-item:hover {
+    background-color: var(--second-color);
 }
 
 .item-number {

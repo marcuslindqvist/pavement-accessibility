@@ -1,0 +1,7 @@
+.access-page .page-header {
+    background-color: var(--first-color-light);
+}
+
+.access-page .page-main {
+    width: 700px;
+}

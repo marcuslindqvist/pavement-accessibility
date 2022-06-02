@@ -15,6 +15,7 @@ const LoginPage = ({ closeThisPage }) => {
         closeThisPage();
         event.preventDefault();
     }
+
     return (
         <div className="menu-page">
             <div className="page-header">
@@ -44,7 +45,7 @@ const LoginPage = ({ closeThisPage }) => {
                         </Link>
                     </li>
                     <li className="h5">
-                        <a>
+                        <a href="/">
                             <FontAwesomeIcon icon={faDoorOpen} />
                             <span className="space"></span>
                             Logga ut

@@ -1,16 +1,43 @@
 .dashboard {
     width: 100%;
-    min-height: 85%;
+    height: 100%;
     background: url('../../assets/diverse.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: bottom;
+    background-position-y: 90%;
+}
+
+.checked-count-num {
+    height: 2rem;
+    width: 2rem;
+    padding: 1rem;
+    background-color: var(--third-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 900px) {
     .dashboard {
         background-size: 70%;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .dashboard .page-main {
+        max-width: 70%;
+        background-color: var(--first-color-light);
+        z-index: -1;
     }
 }
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    .dashboard {
+        background-size: 40%;
+        background-position: bottom;
+        background-position-x: 53%;
+    }
+
+
+}
